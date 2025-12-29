@@ -38,7 +38,6 @@ export default function HomePage() {
     category: AccomplishmentCategory,
     importance: number
   ) => {
-    // 1. Create accomplishment object
     const newAccomplishment: Accomplishment = {
       id: crypto.randomUUID(),
       text: text.trim(),

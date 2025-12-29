@@ -19,7 +19,6 @@ export default function CakeCanvas({
   const [hoveredCandle, setHoveredCandle] = useState<string | null>(null);
   const animationRef = useRef<number>();
 
-  // Calculate canvas dimensions based on cake size
   const canvasWidth = 800;
   const canvasHeight = 500;
   const cakeWidth = 400 + (cakeSize - 1) * 80;
@@ -56,7 +55,6 @@ export default function CakeCanvas({
 
     // Draw all candles
     candles.forEach((candle) => {
-      // ✅ FIX: Validate candle position before drawing
       if (isValidCandlePosition(candle.position)) {
         drawCandle(ctx, candle, candle.id === hoveredCandle);
       }
@@ -167,7 +165,6 @@ export default function CakeCanvas({
     const flicker = Math.sin(time * 10) * 2;
     const size = 5 + (intensity / 100) * 10;
 
-    // ✅ FIX: Ensure flame position is valid
     if (!isFinite(x) || !isFinite(y + flicker) || !isFinite(size)) {
       return;
     }
@@ -285,7 +282,6 @@ export default function CakeCanvas({
   );
 }
 
-// ✅ NEW: Validation function
 function isValidCandlePosition(position: { x: number; y: number }): boolean {
   return (
     isFinite(position.x) &&
