@@ -106,7 +106,7 @@ export default function AddAccomplishmentForm({
               key={suggestion}
               type="button"
               onClick={() => setText(suggestion)}
-              className="px-3 py-1.5 text-sm bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+              className="px-3 py-1.5 text-sm bg-gray-700 hover:bg-gray-200 rounded-full transition-colors"
               disabled={isSubmitting}
             >
               {suggestion}
@@ -123,7 +123,7 @@ export default function AddAccomplishmentForm({
           ${
             !text.trim() || isSubmitting
               ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-              : "bg-gradient-to-r from-pink-500 to-orange-500 text-white hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
+              : "bg-linear-to-r from-pink-500 to-orange-500 text-white hover:shadow-lg hover:scale-[1.02] active:scale-[0.98]"
           }
         `}
       >
